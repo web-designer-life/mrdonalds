@@ -35,7 +35,6 @@ const ImgLogo = styled.img`
 `;
 
 const Sign = styled.button`
-    cursor: pointer;
     background-color: transparent;
     border-color: transparent;
     color: white;
