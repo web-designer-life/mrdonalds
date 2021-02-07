@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ButtonCheckout } from './ButtonCheckout';
 
 const Overlay = styled.div`
     position: fixed;
@@ -26,9 +27,25 @@ const Banner = styled.div`
     background-size: cover;
     width: 100%;
     height: 200px;
-    margin: 0 0 20px 0;
 `;
 
+const Content = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 200px);
+    padding: 20px 53px 43px 37px;
+`;
+
+const HeaderContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    font-family: Pacifico;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 53px;
+`;
 
 export const ModalItem = ({ openItem, setOpenItem }) => {
     function closeModal(evt) {
@@ -42,7 +59,13 @@ export const ModalItem = ({ openItem, setOpenItem }) => {
         <Overlay id="overlay" onClick={closeModal}>
             <Modal>
                 <Banner img={openItem.img}/>
-                {openItem.name}
+                <Content>
+                    <HeaderContent>
+                        <div>{openItem.name}</div>
+                        <div>{openItem.price}₽</div>
+                    </HeaderContent>
+                    <ButtonCheckout>Добавить</ButtonCheckout>
+                </Content>
             </Modal>
         </Overlay>
     )
