@@ -6,4 +6,4 @@ export function useCount() {
     const onChange = (evt) => setCount(evt.target.value);
 
     return { count, setCount, onChange };
-}
+};
