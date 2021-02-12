@@ -45,23 +45,44 @@ const ImgSign = styled.img`
     width: 32px;
 `;
 
-const TextSign = styled.p`
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
+const User = styled.div`
+    display: flex;
+    align-items: center;
+    text-align: center;
 `;
 
-export const NavBar = () => (
+const LogOut = styled.span`
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0 30px 0 0;
+`;
+
+const Figure = styled.figure`
+    margin: 0 30px;
+`;
+
+export const NavBar = ({ authentication, logIn, logOut }) => (
     <NavBarStyled>
         <Logo>
             <ImgLogo src={logoImg} alt="Логотип"/>
             <H1>MRDonald’s</H1>
         </Logo>
-        <Sign>
-            <ImgSign src={signImg} alt="Войти"/>
-            <TextSign>войти</TextSign>
+        {authentication ? 
+        <User>
+            <Figure>
+                <ImgSign src={signImg} alt={authentication.displayName}/>
+                <figcaption>{authentication.displayName}</figcaption>
+            </Figure>
+            <LogOut title="Выйти" onClick={logOut}>X</LogOut>
+        </User>
+        : 
+        <Sign onClick={logIn}>
+            <Figure>
+                <ImgSign src={signImg} alt="Войти"/>
+                <figcaption>войти</figcaption>
+            </Figure>
         </Sign>
+        }
     </NavBarStyled>
 );
