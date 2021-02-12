@@ -55,7 +55,7 @@ const LogOut = styled.span`
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    margin: 0 30px 0 0;
+    margin: 0 15px 0 0;
 `;
 
 const Figure = styled.figure`
