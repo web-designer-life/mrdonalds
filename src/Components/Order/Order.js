@@ -29,9 +29,7 @@ const OrderContent = styled.div`
     flex-grow: 1;
 `;
 
-const OrderList = styled.ul`
-    
-`;
+const OrderList = styled.ul``;
 
 const TotalPrice = styled.span`
     text-align: right;
@@ -71,6 +69,8 @@ export const Order = ({ orders, setOrders, setOpenItem, authentication, logIn, f
             email: authentication.email,
             order: newOrder,
         });
+
+        setOrders([]);
     };
 
     const deleteItem = (index) => {
