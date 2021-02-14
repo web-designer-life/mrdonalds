@@ -9,7 +9,7 @@ const NavBarStyled = styled.header`
     top: 0;
     left: 0;
     z-index: 20;
-    height: 80px;
+    min-height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -46,6 +46,11 @@ const ImgSign = styled.img`
     width: 32px;
 `;
 
+const ImgUser = styled.img`
+    width: 50px;
+    border-radius: 50px;
+`;
+
 const User = styled.div`
     display: flex;
     align-items: center;
@@ -65,7 +70,7 @@ const Figure = styled.figure`
 
 export const NavBar = () => {
     const { auth: { authentication, logIn, logOut } } = useContext(Context);
-
+    console.log(authentication);
     return (
         <NavBarStyled>
             <Logo>
@@ -75,7 +80,7 @@ export const NavBar = () => {
             {authentication ? 
             <User>
                 <Figure>
-                    <ImgSign src={signImg} alt={authentication.displayName}/>
+                    <ImgUser src={authentication.photoURL} alt={authentication.displayName}/>
                     <figcaption>{authentication.displayName}</figcaption>
                 </Figure>
                 <LogOut title="Выйти" onClick={logOut}>X</LogOut>
