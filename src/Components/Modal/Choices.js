@@ -20,7 +20,10 @@ const ChoiceLabel = styled.label`
 `;
 
 export function Choices() {
-    const { choices: { openItem, choice, changeChoices } } = useContext(ContextItem);
+    const {
+        choices: { choice, changeChoices },
+        openItem,
+    } = useContext(ContextItem);
 
     return (
         <>
