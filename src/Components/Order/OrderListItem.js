@@ -6,13 +6,19 @@ import { Context } from '../Functions/context';
 
 const OrderItemStyled = styled.li`
     display: flex;
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     flex-wrap: wrap;
     cursor: pointer;
 `;
 
 const ItemName = styled.span`
     flex-grow: 1;
+    @media (max-width: 875px) {
+        width: 100%;
+    }
+    @media (max-width: 550px) {
+        width: auto;
+    }
 `;
 
 const ItemPrice = styled.span`

@@ -12,20 +12,32 @@ const OrderStyled = styled.section`
     top: 80px;
     left: 0;
     background-color: white;
-    width: 380px;
+    width: 420px;
     height: calc(100% - 80px);
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.25);
     padding: 20px;
+    @media (max-width: 875px) {
+        width: 280px;
+    }
+    @media (max-width: 550px) {
+        width: 100%;
+        position: static;
+        margin: 80px 0 0 0;
+    }
 `;
 
 export const OrderTitle = styled.h2`
     text-transform: uppercase;
     text-align: center;
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
+    @media (max-height: 450px) {  
+        margin: 0;
+    }
 `;
 
 const OrderContent = styled.div`
     flex-grow: 1;
+    overflow: auto;
 `;
 
 const OrderList = styled.ul``;
@@ -38,10 +50,14 @@ export const TotalPrice = styled.span`
 
 export const Total = styled.div`
     display: flex;
-    margin: 0 35px 30px 35px;
+    margin: 10px 35px 10px 35px;
     & span:first-child {
         flex-grow: 1;
     }
+`;
+
+const TotalCount = styled.span`
+    margin: 0 0 0 15px;
 `;
 
 const EmptyList = styled.p`
@@ -84,7 +100,7 @@ export const Order = () => {
                 <>
                     <Total>
                         <span>Итого</span>
-                        <span>{totalCounter}</span>
+                        <TotalCount>{totalCounter}</TotalCount>
                         <TotalPrice>{formatCurrency(total)}</TotalPrice>
                     </Total>
                     <ButtonCheckout onClick={() => {

@@ -14,7 +14,7 @@ const NavBarStyled = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 0 15px;
     background-color: #299B01;
     color: white;
 `;
@@ -29,6 +29,9 @@ const H1 = styled.h1`
     font-style: normal;
     font-weight: 400;
     margin: 0 0 0 15px;
+    @media (max-width: 650px) {
+        font-size: 20px;
+    }
 `;
 
 const ImgLogo = styled.img`
@@ -47,7 +50,7 @@ const ImgSign = styled.img`
 `;
 
 const ImgUser = styled.img`
-    width: 50px;
+    width: 32px;
     border-radius: 50px;
 `;
 
@@ -62,15 +65,21 @@ const LogOut = styled.span`
     font-weight: 700;
     cursor: pointer;
     margin: 0 15px 0 0;
+    @media (max-width: 650px) {
+        margin: 0;
+    }
 `;
 
 const Figure = styled.figure`
     margin: 0 30px;
+    @media (max-width: 650px) {
+        margin: 0 10px;
+    }
 `;
 
 export const NavBar = () => {
     const { auth: { authentication, logIn, logOut } } = useContext(Context);
-    console.log(authentication);
+    
     return (
         <NavBarStyled>
             <Logo>

@@ -26,7 +26,7 @@ export const Overlay = styled.div`
 const Modal = styled.div`
     background-color: white;
     width: 600px;
-    height: 600px;
+    min-height: 600px;
 `;
 
 const Banner = styled.div`

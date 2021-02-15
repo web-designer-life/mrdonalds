@@ -16,7 +16,7 @@ const Item = styled.li`
     background-image: ${({ img }) => `url(${img})`};
     background-position: center;
     background-size: cover;
-    margin: 30px 30px 0 0;
+    margin: 30px 15px 0 15px;
     padding: 15px;
     font-size: 30px;
     color: white;

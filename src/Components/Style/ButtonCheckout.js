@@ -4,7 +4,7 @@ export const ButtonCheckout = styled.button`
     display: block;
     margin: 0 auto;
     width: 250px;
-    height: 65px;
+    min-height: 65px;
     background-color: #299B01;
     font-family: Roboto;
     font-style: normal;
@@ -25,5 +25,11 @@ export const ButtonCheckout = styled.button`
         color: #bbbbbb;
         background-color: #cccccc;
         border-color: #aaaaaa;
+    }
+    @media (max-width: 875px) {
+        width: 100%;
+    }
+    @media (max-height: 370px) {  
+        min-height: 40px;
     }
 `;
