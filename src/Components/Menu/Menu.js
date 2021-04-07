@@ -6,7 +6,6 @@ import { Preloader } from './Preloader';
 import { Context } from '../Functions/context';
 
 const MenuStyled = styled.main`
-    background-color: #ccc;
     height: 100vh;
     margin: 80px 0 0 420px;
     @media (max-width: 875px) {
